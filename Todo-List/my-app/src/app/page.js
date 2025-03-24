@@ -10,7 +10,7 @@ export default function Home() {
   // Download Task from Database (Firebase)
   useEffect(() => {
     async function fetchData() {
-      const data = await getTasks(); // ✅ เปลี่ยนเป็น getTasks()
+      const data = await getTasks(); 
       setTasks(data);
     }
     fetchData();
@@ -18,14 +18,14 @@ export default function Home() {
 
   // Add Task to Database
   const handleAddTask = async () => {
-    if (!input.trim()) return; // Protect Null Task
+    if (!input.trim()) return; 
     await addTask({ text: input });
-    setInput(""); // Clear Input
-    setTasks(await getTasks()); // Reload Task
+    setInput(""); // 
+    setTasks(await getTasks()); 
   };
 
   // Delete Task
-  const handleDeleteTask = async (id) => { // ✅ เพิ่มพารามิเตอร์ id
+  const handleDeleteTask = async (id) => { 
     await deleteTask(id);
     setTasks(await getTasks());
   };
@@ -47,10 +47,10 @@ export default function Home() {
           </button>
         </div>
         <ul>
-          {tasks.map((task) => ( // ✅ เปลี่ยน `tasks` เป็น `task`
+          {tasks.map((task) => (
             <li key={task.id} className="flex justify-between items-center bg-emerald-50 hover:bg-green-100 p-2 rounded-lg mb-2">
               {task.text}
-              <button onClick={() => handleDeleteTask(task.id)} className="text-red-400 hover:text-red-700"> {/* ✅ ส่ง id ไปให้ handleDeleteTask */}
+              <button onClick={() => handleDeleteTask(task.id)} className="text-red-400 hover:text-red-700">
                 X
               </button>
             </li>
