@@ -3,6 +3,7 @@ import React from 'react'
 function Navbar() {
   return (
     <div>
+<<<<<<< HEAD
         <div className="block w-full max-w-screen-full px-4 py-3 mx-auto bg-base-100 shadow-md lg:px-8 lg:py-3">
             <div className="container flex flex-warp items-center justify-between mx-auto text-slate-800">
                 <a href="#" className='mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold'>Laodrmat Company</a>
@@ -25,6 +26,11 @@ function Navbar() {
                     </li>
                   </ul>
                 </div>
+=======
+        <div className="block w-full max-w-screen-lg px-4 py-3 mx-auto bg-base-100 shadow-md lg:px-8 lg:py-3">
+            <div className="container flex flex-warp items-center justify-between mx-auto text-slate-800">
+                <a href="#" className='mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold'>Laodrmat Company</a>
+>>>>>>> 4daaa8b93b08a20a14eb447028192193c6536add
             </div>
         </div>
     </div>

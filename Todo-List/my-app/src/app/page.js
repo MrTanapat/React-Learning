@@ -11,10 +11,14 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
 <<<<<<< HEAD
+<<<<<<< HEAD
       const data = await getTasks();
 =======
       const data = await getTasks(); 
 >>>>>>> fc57ee3 (Add Laundry Project)
+=======
+      const data = await getTasks(); 
+>>>>>>> 4daaa8b93b08a20a14eb447028192193c6536add
       setTasks(data);
     }
     fetchData();
@@ -30,10 +34,14 @@ export default function Home() {
 
   // Delete Task
 <<<<<<< HEAD
+<<<<<<< HEAD
   const handleDeleteTask = async (id) => {
 =======
   const handleDeleteTask = async (id) => { 
 >>>>>>> fc57ee3 (Add Laundry Project)
+=======
+  const handleDeleteTask = async (id) => { 
+>>>>>>> 4daaa8b93b08a20a14eb447028192193c6536add
     await deleteTask(id);
     setTasks(await getTasks());
   };
