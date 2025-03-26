@@ -1,34 +1,97 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
-      <div className="block w-full max-w-screen-full px-4 py-3 mx-auto bg-base-100 shadow-md lg:px-8 lg:py-3">
-        <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
-          <a href="#" className='mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold'>Laundromat Company</a>
-
-          <div className="hidden lg:block">
-            <ul className='flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6'>
-              <li className='flex items-center p-1 text-sm gap-x-2 text-slate-800'>
-                <a href="#" className='flex items-center'>About</a>
-              </li>
-
-              <li className='flex items-center p-1 text-sm gap-x-2 text-slate-800'>
-                <a href="#" className='flex items-center'>Service</a>
-              </li>
-
-              <li className='flex items-center p-1 text-sm gap-x-2 text-slate-800'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6 text-slate-500">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+      <div className="bg-base-100 text-slate-800 shadow-lg">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-between h-16">
+            <a
+              href="#"
+              className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg font-semibold"
+            >
+              LaudromatCompany
+            </a>
+            <div className="ml-auto flex justify-end items-center sm:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-slate-800 hover:text-slate-400 focus:ring-inset focus:ring-white"
+              >
+                <span className="sr-only">Open menu</span>
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
-                <a href="#" className='flex items-center'>Account</a>
-              </li>
-            </ul>
+              </button>
+            </div>
+
+            <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="hidden sm:block sm:ml-6">
+                <div className="flex space-x-5">
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    About
+                  </a>
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    Service
+                  </a>
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    Account
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {isOpen && (
+              <div className="absolute top-full left-0 w-full bg-base-100 shadow-lg sm:hidden">
+                <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-2">
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    About
+                  </a>
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    Service
+                  </a>
+                  <a
+                    href="#"
+                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                  >
+                    Account
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Navbar;
