@@ -5,8 +5,8 @@ function Navbar() {
 
   return (
     <div>
-      <div className="bg-base-100 text-slate-800 shadow-lg">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-base-100 text-slate-800">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <a
               href="#"
@@ -14,7 +14,8 @@ function Navbar() {
             >
               LaudromatCompany
             </a>
-            <div className="ml-auto flex justify-end items-center sm:hidden">
+
+            <div className="relative sm:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-slate-800 hover:text-slate-400 focus:ring-inset focus:ring-white"
@@ -36,57 +37,50 @@ function Navbar() {
                   />
                 </svg>
               </button>
-            </div>
 
-            <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="hidden sm:block sm:ml-6">
-                <div className="flex space-x-5">
+              {isOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md">
                   <a
                     href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                    className="block px-4 py-2 text-slate-800 hover:bg-gray-100 rounded-md"
                   >
                     About
                   </a>
                   <a
                     href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                    className="block px-4 py-2 text-slate-800 hover:bg-gray-100 rounded-md"
                   >
                     Service
                   </a>
                   <a
                     href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+                    className="block px-4 py-2 text-slate-800 hover:bg-gray-100 rounded-md"
                   >
                     Account
                   </a>
                 </div>
-              </div>
+              )}
             </div>
-
-            {isOpen && (
-              <div className="absolute top-full left-0 w-full bg-base-100 shadow-lg sm:hidden">
-                <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-2">
-                  <a
-                    href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
-                  >
-                    About
-                  </a>
-                  <a
-                    href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
-                  >
-                    Service
-                  </a>
-                  <a
-                    href="#"
-                    className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
-                  >
-                    Account
-                  </a>
-                </div>
-              </div>
-            )}
+            <div className="hidden sm:flex items-center space-x-5">
+              <a
+                href="#"
+                className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+              >
+                About
+              </a>
+              <a
+                href="#"
+                className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+              >
+                Service
+              </a>
+              <a
+                href="#"
+                className="text-slate-800 hover:text-slate-600 px-3 py-2 rounded-md text-lg"
+              >
+                Account
+              </a>
+            </div>
           </div>
         </div>
       </div>
